@@ -1,2 +1,231 @@
 # reseaux
-Mes réseaux sociaux 
+
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mes réseaux</title>
+
+  <style>
+
+    * {
+
+      box-sizing: border-box;
+
+    }
+
+    body {
+
+      margin: 0;
+
+      min-height: 100vh;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      font-family: Arial, sans-serif;
+
+      color: white;
+
+      background: linear-gradient(135deg, #101010, #292929);
+
+    }
+
+    .container {
+
+      width: 90%;
+
+      max-width: 380px;
+
+      padding: 35px 25px;
+
+      text-align: center;
+
+      background: #1c1c1c;
+
+      border: 1px solid #444;
+
+      border-radius: 22px;
+
+      box-shadow: 0 10px 35px #0008;
+
+    }
+
+    h1 {
+
+      margin-top: 0;
+
+      font-size: 30px;
+
+    }
+
+    p {
+
+      color: #bbb;
+
+      margin-bottom: 25px;
+
+    }
+
+    select, button, .open-link {
+
+      width: 100%;
+
+      padding: 15px;
+
+      margin-top: 12px;
+
+      border: none;
+
+      border-radius: 12px;
+
+      font-size: 16px;
+
+    }
+
+    select {
+
+      color: white;
+
+      background: #333;
+
+      border: 1px solid #555;
+
+    }
+
+    button {
+
+      color: white;
+
+      background: #555;
+
+      font-weight: bold;
+
+      cursor: pointer;
+
+    }
+
+    button:hover {
+
+      background: #777;
+
+    }
+
+    .open-link {
+
+      display: none;
+
+      text-decoration: none;
+
+      color: white;
+
+      background: #e63946;
+
+      font-weight: bold;
+
+    }
+
+    .open-link:hover {
+
+      background: #c92f3b;
+
+    }
+
+    .footer {
+
+      margin-top: 25px;
+
+      font-size: 12px;
+
+      color: #777;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Mes réseaux</h1>
+
+    <p>Retrouve-moi sur mes réseaux sociaux</p>
+
+    <select id="reseau">
+
+      <option value="">Choisis un réseau</option>
+
+      <option value="instagram">Instagram</option>
+
+      <option value="snapchat">Snapchat</option>
+
+      <option value="tiktok">TikTok</option>
+
+      <option value="strava">Strava</option>
+
+    </select>
+
+    <button onclick="confirmer()">Confirmer la sélection</button>
+
+    <a id="ouvrir" class="open-link" href="#" target="_blank" rel="noopener">
+
+      Ouvrir mon profil
+
+    </a>
+
+    <div class="footer">© Mes réseaux</div>
+
+  </div>
+
+  <script>
+
+    const profils = {
+
+      instagram: "https://www.instagram.com/nzo_chmt/",
+
+      snapchat: "https://www.snapchat.com/add/echeminot3",
+
+      tiktok: "https://www.tiktok.com/@enzoct_",
+
+      strava: "https://strava.app.link/JepOoVqmI7b"
+
+    };
+
+    function confirmer() {
+
+      const choix = document.getElementById("reseau").value;
+
+      const bouton = document.getElementById("ouvrir");
+
+      if (!choix) {
+
+        alert("Choisis d'abord un réseau !");
+
+        bouton.style.display = "none";
+
+        return;
+
+      }
+
+      bouton.href = profils[choix];
+
+      bouton.style.display = "block";
+
+    }
+
+  </script>
+
+</body>
+
+</html>
